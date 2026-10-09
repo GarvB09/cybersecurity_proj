@@ -1,0 +1,6 @@
+﻿detect.exe
+submission.zip
+build/
+dist/
+*.spec
+__pycache__/

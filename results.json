@@ -1,0 +1,123 @@
+{
+  "test": {
+    "rules": {
+      "precision": 0.668,
+      "recall": 0.292,
+      "f1": 0.406,
+      "fpr": 0.0145,
+      "auc": null
+    },
+    "iso": {
+      "precision": 0.778,
+      "recall": 0.357,
+      "f1": 0.489,
+      "fpr": 0.0102,
+      "auc": 0.963
+    },
+    "rf": {
+      "precision": 0.843,
+      "recall": 0.977,
+      "f1": 0.905,
+      "fpr": 0.0182,
+      "auc": 0.994
+    },
+    "hybrid": {
+      "precision": 0.824,
+      "recall": 0.975,
+      "f1": 0.893,
+      "fpr": 0.0208,
+      "auc": 0.992
+    }
+  },
+  "novel": {
+    "rules": {
+      "precision": 0.507,
+      "recall": 0.23,
+      "f1": 0.317,
+      "fpr": 0.0168,
+      "auc": null
+    },
+    "iso": {
+      "precision": 0.577,
+      "recall": 0.2,
+      "f1": 0.297,
+      "fpr": 0.011,
+      "auc": 0.913
+    },
+    "rf": {
+      "precision": 0.807,
+      "recall": 0.88,
+      "f1": 0.842,
+      "fpr": 0.0158,
+      "auc": 0.993
+    },
+    "hybrid": {
+      "precision": 0.762,
+      "recall": 0.877,
+      "f1": 0.816,
+      "fpr": 0.0205,
+      "auc": 0.991
+    }
+  },
+  "stage_recall_hybrid": {
+    "recon": 1.0,
+    "exploitation": 0.983,
+    "persistence": 0.917,
+    "cred_session": 0.983
+  },
+  "counts": {
+    "train": 15400,
+    "test": 6600,
+    "novel": 4300
+  },
+  "confusion_hybrid": [
+    [
+      5875,
+      125
+    ],
+    [
+      15,
+      585
+    ]
+  ],
+  "response": {
+    "steps": [
+      "Alert triage and enrichment",
+      "Block source IP / ASN at edge",
+      "Revoke active VPN sessions",
+      "Isolate appliance to mgmt VLAN",
+      "Force credential reset for affected users",
+      "Snapshot + external integrity scan"
+    ],
+    "auto_min": [
+      2,
+      3,
+      4,
+      7,
+      12,
+      22
+    ],
+    "manual_min": [
+      45,
+      75,
+      115,
+      205,
+      445,
+      625
+    ]
+  },
+  "feature_importance": {
+    "admin_api_ratio": 0.4528,
+    "new_asn": 0.0921,
+    "new_processes": 0.079,
+    "outbound_conns": 0.0673,
+    "uniq_endpoints": 0.065,
+    "bytes_out_mb": 0.0643,
+    "session_reuse_ips": 0.0503,
+    "config_changes": 0.0414,
+    "req_rate": 0.0402,
+    "auth_fail_ratio": 0.0298,
+    "integrity_drift": 0.0136,
+    "off_hours": 0.0042
+  }
+}
